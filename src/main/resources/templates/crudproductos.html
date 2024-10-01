@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Mantenimiento</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+				<div class="col-6 col-sm-4">
+		<h1>Mantenimiento de Productos</h1>
+		<form action="/producto/grabar" method="post" th:object="${producto}">
+			
+			<div class="form-group">
+				<label for="inputCod">Código</label> 
+				<input type="text" 
+					class="form-control" id="inputCod" placeholder="P0000"  th:field="*{id_prod}">
+			</div>
+			<div class="form-group">
+				<label for="inputNom">Descripcion</label> 
+				<input type="text" 
+					class="form-control" id="inputNom"
+					placeholder="descripcion" th:field="*{des_prod}">
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputStk">Stock</label> 
+					<input type="number" 
+						class="form-control" id="inputStk" placeholder="0"  min="0" max="" th:field="*{stk_prod}">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="inputPrec">Precio</label> 
+					<input type="number" step="0.01"  
+						class="form-control" id="inputPrec" placeholder="0.00" min="0" max="" th:field="*{pre_prod}">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="inputCat">Categoría</label> 
+					<select th:field="*{idcategoria}" id="inputCat" class="form-control">
+						<option value="1">Categoria 1</option>
+						<option value="1">Categoria 2</option>
+						<option value="1">Categoria 3</option>
+						
+					</select>
+					
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputEstado">Estado</label> 
+					<select id="inputEstado" class="form-control" th:field="*{est_prod}" >
+						<option value="0+">Seleccione...</option>
+						<option value="1">Activo</option>
+						<option value="0">Eliminado</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputProv">Proveedor</label> 
+					<select id="inputProv" class="form-control"  th:field="*{pre_prod}">
+						<option value="0">Seleccione...</option>
+						<option value="1">Provedor 1</option>
+						<option value="2">Provedor 1</option>
+						<option value="3">Provedor 1</option>
+					</select>
+				</div>
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Registrar</button>
+		</form>
+		<div th:text="${mensaje}"></div>
+	</div>
+	<div class="col-6 col-sm-7">
+				<h3></h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>xx</th>
+							<th>xx</th>
+							<th>xx</th>
+							<th>xx</th>
+							<th>xx</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>xx</td>
+							<td>xx</td>
+							<td>xx</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" ></script>
+</html>
